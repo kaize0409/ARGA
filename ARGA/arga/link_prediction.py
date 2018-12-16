@@ -56,5 +56,5 @@ class Link_pred_Runner():
                 #roc_score, ap_score,_ = lm_test.get_roc_score(emb, feas)
                 #print('Test ROC score: ' + str(roc_score))
                 #print('Test AP score: ' + str(ap_score))
-            df = pd.DataFrame({'AD-GCA': emb})
-            df.to_csv('output/{}-embedding.csv'.format(self.data_name), index=False, sep=',')
+            df = pd.DataFrame({'embedding': emb})
+            df.to_csv('output/{}-embedding.csv'.format(self.data_name), index=True, sep=',')
