@@ -2,7 +2,7 @@ from sklearn.metrics import f1_score
 from sklearn.metrics import roc_auc_score
 from sklearn.metrics import average_precision_score
 from sklearn import metrics
-from munkres import Munkres, print_matrix
+# from munkres import Munkres, print_matrix
 import numpy as np
 
 class linkpred_metrics():
@@ -40,13 +40,13 @@ class linkpred_metrics():
 
         return roc_score, ap_score, emb
 
-
+"""
 class clustering_metrics():
     def __init__(self, true_label, predict_label):
         self.true_label = true_label
         self.pred_label = predict_label
 
-
+    
     def clusteringAcc(self):
         # best mapping between true_label and predict label
         l1 = list(set(self.true_label))
@@ -65,7 +65,7 @@ class clustering_metrics():
                 mps_d = [i1 for i1 in mps if self.pred_label[i1] == c2]
 
                 cost[i][j] = len(mps_d)
-
+        
         # match two clustering results by Munkres algorithm
         m = Munkres()
         cost = cost.__neg__().tolist()
@@ -81,7 +81,7 @@ class clustering_metrics():
             # ai is the index with label==c2 in the pred_label list
             ai = [ind for ind, elm in enumerate(self.pred_label) if elm == c2]
             new_predict[ai] = c
-
+        
         acc = metrics.accuracy_score(self.true_label, new_predict)
         f1_macro = metrics.f1_score(self.true_label, new_predict, average='macro')
         precision_macro = metrics.precision_score(self.true_label, new_predict, average='macro')
@@ -106,4 +106,4 @@ class clustering_metrics():
         fh.close()
 
         return acc, nmi, adjscore
-
+"""

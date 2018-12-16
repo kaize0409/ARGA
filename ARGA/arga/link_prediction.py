@@ -6,7 +6,6 @@ import numpy as np
 os.environ['CUDA_VISIBLE_DEVICES'] = ""
 
 import tensorflow as tf
-import settings
 from constructor import get_placeholder, get_model, format_data, get_optimizer, update
 from metrics import linkpred_metrics
 # Settings
