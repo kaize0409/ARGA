@@ -83,9 +83,9 @@ class ARGA(Model):
                                            dropout=self.dropout,
                                            logging=self.logging,
                                            name='e_dense_3')(self.embeddings)
-	    self.a = tf.sign(self.embeddings)
+            self.a = tf.sign(self.embeddings)
             self.z_mean = self.a
-	    #add softmax
+            #add softmax
             #self.binary_embeddings = Binarize(input_dim=FLAGS.hidden2,
             #                                 output_dim=FLAGS.hidden2,
             #                                 dropout=self.dropout,

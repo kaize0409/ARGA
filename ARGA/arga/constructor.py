@@ -36,6 +36,7 @@ def get_model(model_str, placeholders, num_features, num_nodes, features_nonzero
     return d_real, discriminator, model
 
 
+"""
 def format_data(data_name):
     # Load data
 
@@ -75,6 +76,41 @@ def format_data(data_name):
 
 
     return feas
+"""
+
+def format_data(data_source):
+
+    adj, features, labels = load_data(data_source)
+
+    # Store original adjacency matrix (without diagonal entries) for later
+    # adj_orig = adj
+    # adj_orig = adj_orig - sp.dia_matrix((adj_orig.diagonal()[np.newaxis, :], [0]), shape=adj_orig.shape)
+    # adj_orig.eliminate_zeros()
+    # adj = adj_orig
+
+    if FLAGS.features == 0:
+        features = sp.identity(features.shape[0])  # featureless
+
+    # Some preprocessing
+    adj_norm = preprocess_graph(adj)
+
+    num_nodes = adj.shape[0]
+
+    features = sparse_to_tuple(features.tocoo())
+    num_features = features[2][1]
+    features_nonzero = features[1].shape[0]
+
+    adj_label = adj + sp.eye(adj.shape[0])
+    adj_label = sparse_to_tuple(adj_label)
+    items = [adj, num_features, num_nodes, features_nonzero, adj_norm, adj_label, features, labels]
+    feas = {}
+    for item in items:
+        # item_name = [ k for k,v in locals().iteritems() if v == item][0]]
+        item_name = retrieve_name(item)
+        feas[item_name] = item
+
+    return feas
+
 
 def get_optimizer(model_str, model, discriminator, placeholders, pos_weight, norm, d_real,num_nodes):
     if model_str == 'arga_ae':

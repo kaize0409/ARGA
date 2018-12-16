@@ -23,7 +23,7 @@ class Link_pred_Runner():
         model_str = self.model
         # formatted data
         feas = format_data(self.data_name)
-	print("node num:" + str(feas['num_nodes']))
+        print("node num:" + str(feas['num_nodes']))
         # Define placeholders
         placeholders = get_placeholder(feas['adj'])
 
@@ -43,16 +43,15 @@ class Link_pred_Runner():
         for epoch in range(self.iteration):
 
             emb, avg_cost = update(ae_model, opt, sess, feas['adj_norm'], feas['adj_label'], feas['features'], placeholders, feas['adj'])
-	    #print ("embedding_shape:" + str(np.shape(emb)))
-	    #print (emb[0])
-            lm_train = linkpred_metrics(feas['val_edges'], feas['val_edges_false'])
-            roc_curr, ap_curr, _ = lm_train.get_roc_score(emb, feas)
-            val_roc_score.append(roc_curr)
+            # lm_train = linkpred_metrics(feas['val_edges'], feas['val_edges_false'])
+            # roc_curr, ap_curr, _ = lm_train.get_roc_score(emb, feas)
+            # val_roc_score.append(roc_curr)
 
-            print("Epoch:", '%04d' % (epoch + 1), "train_loss=", "{:.5f}".format(avg_cost), "val_roc=", "{:.5f}".format(val_roc_score[-1]), "val_ap=", "{:.5f}".format(ap_curr))
+            #print("Epoch:", '%04d' % (epoch + 1), "train_loss=", "{:.5f}".format(avg_cost), "val_roc=", "{:.5f}".format(val_roc_score[-1]), "val_ap=", "{:.5f}".format(ap_curr))
 
             if (epoch+1) % 10 == 0:
-                lm_test = linkpred_metrics(feas['test_edges'], feas['test_edges_false'])
-                roc_score, ap_score,_ = lm_test.get_roc_score(emb, feas)
-                print('Test ROC score: ' + str(roc_score))
-                print('Test AP score: ' + str(ap_score))
+                print("Epoch:", '%04d' % (epoch + 1), "train_loss=", "{:.5f}".format(avg_cost))
+                #lm_test = linkpred_metrics(feas['test_edges'], feas['test_edges_false'])
+                #roc_score, ap_score,_ = lm_test.get_roc_score(emb, feas)
+                #print('Test ROC score: ' + str(roc_score))
+                #print('Test AP score: ' + str(ap_score))
