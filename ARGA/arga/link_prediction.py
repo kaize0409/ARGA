@@ -1,6 +1,7 @@
 from __future__ import division
 from __future__ import print_function
 import os
+import pandas as pd
 import numpy as np
 # Train on CPU (hide GPU) due to memory constraints
 os.environ['CUDA_VISIBLE_DEVICES'] = ""
@@ -50,7 +51,10 @@ class Link_pred_Runner():
 
             if (epoch+1) % 10 == 0:
                 print("Epoch:", '%04d' % (epoch + 1), "train_loss=", "{:.5f}".format(avg_cost))
+
                 #lm_test = linkpred_metrics(feas['test_edges'], feas['test_edges_false'])
                 #roc_score, ap_score,_ = lm_test.get_roc_score(emb, feas)
                 #print('Test ROC score: ' + str(roc_score))
                 #print('Test AP score: ' + str(ap_score))
+            df = pd.DataFrame({'AD-GCA': emb})
+            df.to_csv('output/{}-embedding.csv'.format(self.data_name), index=False, sep=',')
