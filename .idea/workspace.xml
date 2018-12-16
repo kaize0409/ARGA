@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07a10d83-5cda-4e7b-8d69-2a10357e1deb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ARGA/arga/settings.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ARGA/arga/constructor.py" afterPath="$PROJECT_DIR$/ARGA/arga/constructor.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ARGA/arga/link_prediction.py" afterPath="$PROJECT_DIR$/ARGA/arga/link_prediction.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ARGA/arga/model.py" afterPath="$PROJECT_DIR$/ARGA/arga/model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ARGA/arga/run.py" afterPath="$PROJECT_DIR$/ARGA/arga/run.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ARGA/arga/input_data.py" afterPath="$PROJECT_DIR$/ARGA/arga/input_data.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="link_prediction.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="link_prediction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ARGA/arga/link_prediction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -78,9 +74,21 @@
       <file leaf-file-name="constructor.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ARGA/arga/constructor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="99" column="33" lean-forward="true" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
+            <state relative-caret-position="345">
+              <caret line="82" column="32" lean-forward="false" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="input_data.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ARGA/arga/input_data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1260">
+              <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,6 +105,7 @@
         <option value="$PROJECT_DIR$/ARGA/arga/constructor.py" />
         <option value="$PROJECT_DIR$/ARGA/arga/link_prediction.py" />
         <option value="$PROJECT_DIR$/ARGA/arga/run.py" />
+        <option value="$PROJECT_DIR$/ARGA/arga/input_data.py" />
       </list>
     </option>
   </component>
@@ -242,14 +251,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ARGA/arga/constructor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="99" column="33" lean-forward="true" selection-start-line="99" selection-start-column="33" selection-end-line="99" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ARGA/arga/data/acm.mat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -288,10 +289,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ARGA/arga/link_prediction.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="24" column="21" lean-forward="true" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ARGA/arga/constructor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="82" column="32" lean-forward="false" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ARGA/arga/input_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="70" column="38" lean-forward="true" selection-start-line="70" selection-start-column="38" selection-end-line="70" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
